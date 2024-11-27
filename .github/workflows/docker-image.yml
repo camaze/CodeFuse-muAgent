@@ -39,7 +39,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: camaze  # 使用当前 GitHub 用户名
+          username: ${{ secrets.GHCR_USERNAME }}  
           password: ${{ secrets.CR_TOKEN }}  # 使用您刚刚添加的个人访问令牌
 
       - name: Build and push with retry for amd64
