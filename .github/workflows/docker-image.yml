@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-20.04  # 或者指定其他版本
+    permissions: 
+      packages: write
     strategy:
       matrix:
         image: 
