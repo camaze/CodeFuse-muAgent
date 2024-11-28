@@ -28,7 +28,7 @@ jobs:
       - name: Build the Docker image
         run: |
           # 登录阿里云镜像仓库
-          winpty docker login --username=${{ secrets.ALIYUN_USERNAME }} --password=${{ secrets.ALIYUN_PASSWORD }} crpi-15bzoau7jmq0sjss.cn-shanghai.personal.cr.aliyuncs.com
+          docker login --username=${{ secrets.ALIYUN_USERNAME }} --password=${{ secrets.ALIYUN_PASSWORD }} crpi-15bzoau7jmq0sjss.cn-shanghai.personal.cr.aliyuncs.com
 
           # 使用Dockerfile构建镜像
           docker pull --platform ${{ matrix.os }}/${{ matrix.architecture }}  ghcr.io/codefuse-ai/${{ matrix.service.name }}
